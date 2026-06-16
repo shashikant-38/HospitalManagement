@@ -47,7 +47,7 @@ public class DepartmentController {
     public ResponseEntity<DepartmentDTO> updateDepartment(@PathVariable Long id, @RequestBody DepartmentDTO departmentDTO) {
         try {
             DepartmentDTO updatedDepartment = departmentService.updateDepartment(id, departmentDTO);
-            return ResponseEntity.ok(updatedDepartment);
+            return ResponseEntity.ok(updatedDepartment) ;
         } catch (RuntimeException e) {
             return ResponseEntity.notFound().build();
         }
