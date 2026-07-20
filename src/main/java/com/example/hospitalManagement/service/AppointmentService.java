@@ -20,7 +20,7 @@ public class AppointmentService {
     private final DoctorRepository doctorRepository;
 
     public List<AppointmentDTO> getAllAppointments() {
-        return appointmentRepository.findAll().stream()
+         return appointmentRepository.findAll().stream()
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }

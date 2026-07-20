@@ -19,15 +19,15 @@ public class AppointmentController {
 
     @GetMapping
     public ResponseEntity<List<AppointmentDTO>> getAllAppointments() {
-        List<AppointmentDTO> appointments = appointmentService.getAllAppointments();
-        return ResponseEntity.ok(appointments);
+         List<AppointmentDTO> appointments = appointmentService.getAllAppointments();
+         return ResponseEntity.ok(appointments);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<AppointmentDTO> getAppointmentById(@PathVariable Long id) {
         try {
-            AppointmentDTO appointment = appointmentService.getAppointmentById(id);
-            return ResponseEntity.ok(appointment);
+             AppointmentDTO appointment = appointmentService.getAppointmentById(id);
+             return ResponseEntity.ok(appointment);
         } catch (RuntimeException e) {
             return ResponseEntity.notFound().build();
         }
@@ -36,8 +36,8 @@ public class AppointmentController {
     @PostMapping
     public ResponseEntity<AppointmentDTO> createAppointment(@RequestBody AppointmentDTO appointmentDTO) {
         try {
-            AppointmentDTO createdAppointment = appointmentService.createAppointment(appointmentDTO);
-            return ResponseEntity.status(HttpStatus.CREATED).body(createdAppointment);
+             AppointmentDTO createdAppointment = appointmentService.createAppointment(appointmentDTO);
+             return ResponseEntity.status(HttpStatus.CREATED).body(createdAppointment);
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
@@ -46,8 +46,8 @@ public class AppointmentController {
     @PutMapping("/{id}")
     public ResponseEntity<AppointmentDTO> updateAppointment(@PathVariable Long id, @RequestBody AppointmentDTO appointmentDTO) {
         try {
-            AppointmentDTO updatedAppointment = appointmentService.updateAppointment(id, appointmentDTO);
-            return ResponseEntity.ok(updatedAppointment);
+             AppointmentDTO updatedAppointment = appointmentService.updateAppointment(id, appointmentDTO);
+             return ResponseEntity.ok(updatedAppointment);
         } catch (RuntimeException e) {
             return ResponseEntity.notFound().build();
         }
@@ -56,10 +56,10 @@ public class AppointmentController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteAppointment(@PathVariable Long id) {
         try {
-            appointmentService.deleteAppointment(id);
-            return ResponseEntity.noContent().build();
+             appointmentService.deleteAppointment(id);
+             return ResponseEntity.noContent().build();
         } catch (RuntimeException e) {
-            return ResponseEntity.notFound().build();
+             return ResponseEntity.notFound().build();
         }
     }
 }
