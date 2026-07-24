@@ -1,103 +1,170 @@
-# Hospital Management System
+# 🏥 Hospital Management System
 
-A Spring Boot REST API for managing hospital operations, including patients, doctors, departments, appointments, and insurance information.
-
-## 🏥 Overview
-
-This project provides a backend solution for hospital management with support for:
-
-* Patient Management
-* Doctor Management
-* Department Management
-* Appointment Scheduling
-* Insurance Management
+A scalable backend application built with **Spring Boot** that streamlines hospital operations by managing patients, doctors, departments, appointments, and insurance records through RESTful APIs.
 
 ## 🚀 Features
 
-* CRUD operations for all entities
-* RESTful API architecture
-* Data validation and exception handling
-* PostgreSQL database integration
-* DTO-based API responses
-* Global exception handling
-* CORS support for frontend integration
+- 👤 Patient Management
+  - Register, update, delete, and retrieve patient records
+  - Manage patient insurance details
+
+- 👨‍⚕️ Doctor Management
+  - Add and manage doctor profiles
+  - Assign doctors to departments and specializations
+
+- 🏥 Department Management
+  - Create and manage hospital departments
+  - Assign department heads
+
+- 📅 Appointment Management
+  - Schedule, update, and cancel appointments
+  - Track patient-doctor interactions
+
+- 🛡️ Insurance Management
+  - Store and manage patient insurance information
 
 ## 🛠️ Tech Stack
 
-* Java 17
-* Spring Boot 3.5.6
-* Spring Data JPA
-* Hibernate
-* PostgreSQL
-* Maven
-* Lombok
+- Java 17
+- Spring Boot 3.5.6
+- Spring Data JPA
+- Hibernate
+- PostgreSQL
+- Maven
+- Lombok
+- Jakarta Validation
 
-## 📚 API Modules
+## 🏗️ Architecture
 
-### Patient Management
+- RESTful API Design
+- Layered Architecture (Controller → Service → Repository)
+- DTO-based Request & Response
+- Global Exception Handling
+- Bean Validation
+- CORS Configuration
 
-* Create, update, delete, and retrieve patient records
-* Manage patient insurance information
+## 📚 REST API
 
-### Doctor Management
+### Patient APIs
+- Create Patient
+- Get Patient by ID
+- Get All Patients
+- Update Patient
+- Delete Patient
 
-* Manage doctor profiles and specializations
-* Assign doctors to departments
+### Doctor APIs
+- Create Doctor
+- Get Doctor Details
+- Update Doctor
+- Delete Doctor
 
-### Appointment Management
+### Department APIs
+- Create Department
+- Get Department Details
+- Update Department
+- Delete Department
 
-* Schedule appointments
-* Track patient-doctor interactions
+### Appointment APIs
+- Schedule Appointment
+- Update Appointment
+- Cancel Appointment
+- View Appointment Details
 
-### Department Management
+### Insurance APIs
+- Add Insurance
+- Update Insurance
+- Delete Insurance
+- Retrieve Insurance Details
 
-* Manage hospital departments
-* Assign department heads and staff
+## ⚙️ Installation
 
-## 🔧 Setup
+### 1. Clone Repository
 
-### Database
-
-```sql
-CREATE DATABASE hospitalDB;
+```bash
+git clone https://github.com/<your-username>/Hospital-Management-System.git
+cd Hospital-Management-System
 ```
 
-Update database credentials in `application.properties`.
+### 2. Create Database
 
-### Run Application
+```sql
+CREATE DATABASE hospitaldb;
+```
+
+### 3. Configure Database
+
+Update `application.properties`
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/hospitaldb
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+```
+
+### 4. Run Application
 
 ```bash
 mvn spring-boot:run
 ```
 
-Application runs at:
+Application starts at:
 
-```text
+```
 http://localhost:8080
 ```
 
-## 🧪 Testing
+## 🧪 API Testing
 
-Use Postman to test all REST endpoints.
+Test APIs using **Postman** or any REST client.
 
-Example:
+Example endpoints:
 
 ```http
-GET /api/patients
-POST /api/doctors
-PUT /api/appointments/{id}
-DELETE /api/departments/{id}
+GET    /api/patients
+POST   /api/patients
+PUT    /api/patients/{id}
+DELETE /api/patients/{id}
+
+GET    /api/doctors
+POST   /api/doctors
+
+GET    /api/departments
+POST   /api/departments
+
+GET    /api/appointments
+POST   /api/appointments
 ```
 
-## 🚀 Future Improvements
+## 📂 Project Structure
 
-* JWT Authentication & Authorization
-* Role-Based Access Control
-* Docker Containerization
-* API Documentation with Swagger/OpenAPI
-* CI/CD Pipeline
-* Microservices Migration
+```
+src
+ ├── controller
+ ├── service
+ ├── repository
+ ├── entity
+ ├── dto
+ ├── exception
+ ├── config
+ └── HospitalManagementApplication.java
+```
+
+## 🚀 Future Enhancements
+
+- JWT Authentication & Authorization
+- Role-Based Access Control (RBAC)
+- Swagger/OpenAPI Documentation
+- Docker Support
+- Unit & Integration Testing
+- CI/CD Pipeline
+- Email Notifications
+- Appointment Reminder System
+- Microservices Architecture
+- Redis Caching
 
 ## 👨‍💻 Author
 
-Shashikant Patil
+**Shashikant Patil**
+
+- GitHub: https://github.com/shashikant-38
+- LinkedIn: *(Add your LinkedIn profile)*
